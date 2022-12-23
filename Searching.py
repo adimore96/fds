@@ -8,8 +8,6 @@ def linear(arr,n,key):
 def binarySer(arr,n,key):
     l=0
     u=n-1
-    
-
     while(l<=u):
         mid=(l+u)//2
         if (arr[mid]==key):
@@ -20,7 +18,7 @@ def binarySer(arr,n,key):
                 l=mid+1
             else:
                 u=mid-1
-    #    print("Element not found in binary search")
+    print("Element not found in binary search")
 
 def sentinal(arr,n,key):
     last = arr[n-1]
@@ -36,8 +34,20 @@ def sentinal(arr,n,key):
 
 
 arr=[1,20,30,40,50,60,70]
-key=70
+key=5
 n=len(arr)
-binarySer(arr,n,key)
-sentinal(arr,n,key)
-linear(arr,n,key)
+flag = 1
+while flag==1:
+    print("Enter Choice for searching Algorithm:")
+    print("1. Binary Search")
+    print("2. Sentinal Search")
+    print("3. Linear  Search")
+    ch= int(input())
+    if ch==1:
+        binarySer(arr,n,key)
+    elif ch==2:
+        sentinal(arr,n,key)
+    elif ch==3:
+        linear(arr,n,key)
+    else:
+        print("Enter Valid Choice")
